@@ -1,0 +1,31 @@
+Kafka Topic Cli
+
+
+kafka-topics --zookeeper 127.0.0.1:2181 --list
+
+kafka-topics --zookeeper 127.0.0.1:2181 --topic demo --create --partitions 3 --replication-factor 1
+
+kafka-topics --zookeeper 127.0.0.1:2181 --topic demo --describe
+
+kafka-topics --zookeeper 127.0.0.1:2181 --topic demo --delete
+
+kafka-console-producer --broker-list 127.0.0.1:9092 --topic demo
+
+test
+hello
+ok
+#producer with properties
+kafka-console-producer --broker-list 127.0.0.1:9092 --topic demo --producer-property acks=all
+
+test
+hello
+ok
+
+#console-consumer
+
+kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic demo
+
+kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic demo --from-beginning
+
+
+
